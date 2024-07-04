@@ -2,7 +2,7 @@
 
 ## SCREENSHOT OF THE LOGO
 
-[![Logo Component Screenshot](https://github.com/Techwolf78/Logo-React/blob/7eea15538524b506013836b6da85638e41aed44d/public/bandicam%202024-07-04%2012-26-28-823.jpg?raw=true)](https://github.com/Techwolf78/Logo-React/blob/7eea15538524b506013836b6da85638e41aed44d/public/bandicam%202024-07-04%2012-26-28-823.jpg)
+[![Logo Component Screenshot](https://github.com/Techwolf78/Logo-React/blob/d4765af8a47394f1af45e54509e0b71b102315f8/public/logo.JPG)
 Logo.tsx
 
 ```bash
