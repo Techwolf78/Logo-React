@@ -32,24 +32,24 @@ Outer Container (div.flex.justify-center.items-center.h-screen.bg-gray-900):
 - Centers the content vertically and horizontally (flex justify-center items-center).
 - Sets a dark gray background (bg-gray-900) covering the entire screen (h-screen).
 
-Logo Container (div.relative.w-64.h-64):
+Logo Container (div.relative.w-96.h-96):
 
 - Positioned relatively (relative).
-- Dimensions set to 64 pixels for width and height (w-64 h-64).
+- Dimensions set to 96 pixels for width and height (w-96 h-96).
 
 Border Design (div.absolute.top-0.left-0 ...):
 
 - Positioned absolutely at the top-left corner of its parent container (absolute top-0 left-0).
-- Draws a rotated border using Tailwind CSS border utilities (border-8, border-transparent, border-t-[#9BCD31], border-r-[#FF4500], border-b-[#A3A3A3], border-l-[#4682B4], transform rotate-45).
+- Draws a rotated border using Tailwind CSS border utilities (border-42, border-transparent, border-t-[#ca7c4e], border-r-[#beb9b7], border-b-[#199296], border-l-[#a0e4af], transform rotate-45).
 
 Content (div.absolute.inset-0 ...):
 
 - Positioned absolutely to cover its parent container (absolute inset-0).
 - Uses flexbox (flex flex-col justify-center items-center) to center its contents vertically and horizontally.
-- Text elements styled with Tailwind CSS classes (text-white, text-2xl, text-sm, font-bold, text-orange-500).
+- Text elements styled with Tailwind CSS classes (text-white, text-4xl, text-m, font-bold, text-orange-500).
 - Text Elements:
-- h1 className="text-2xl font-bold" HTML span className="text-orange-500"&</span> CSS</h1>: Displays a heading with "HTML & CSS" in bold (text-2xl and font-bold), with the ampersand (&) colored orange (text-orange-500).
-- <p className="text-sm">design and build websites</p>: Displays a paragraph with the text "design and build websites" in smaller text size (text-sm).
+- h1 className="text-4xl font-bold" HTML span className="text-orange-500"&</span> CSS</h1>: Displays a heading with "HTML & CSS" in bold (text-4xl and font-bold), with the ampersand (&) colored orange (text-orange-500).
+- <p className="text-sm">design and build websites</p>: Displays a paragraph with the text "design and build websites" in medium text size (text-m).
 
 ## PLEASE find the preview of the logo here " https://logo-react.vercel.app/ "
 
