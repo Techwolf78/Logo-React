@@ -2,8 +2,8 @@
 
 ## SCREENSHOT OF THE LOGO
 
-[![Logo Component Screenshot](https://github.com/Techwolf78/Logo-React/blob/d4765af8a47394f1af45e54509e0b71b102315f8/public/logo.JPG)
-Logo.tsx
+![Logo Component Screenshot](https://github.com/Techwolf78/Logo-React/blob/d4765af8a47394f1af45e54509e0b71b102315f8/public/logo.JPG)
+##Logo.tsx
 
 ```bash
 import React from 'react';
