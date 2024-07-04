@@ -1,6 +1,10 @@
-#  Assignment 1: Designing the Logo
+# Assignment 1: Designing the Logo
 
-Logo.tsx 
+## SCREENSHOT OF THE LOGO
+
+[![Logo Component Screenshot](https://github.com/Techwolf78/Logo-React/blob/7eea15538524b506013836b6da85638e41aed44d/public/bandicam%202024-07-04%2012-26-28-823.jpg?raw=true)](https://github.com/Techwolf78/Logo-React/blob/7eea15538524b506013836b6da85638e41aed44d/public/bandicam%202024-07-04%2012-26-28-823.jpg)
+Logo.tsx
+
 ```bash
 import React from 'react';
 
@@ -20,39 +24,46 @@ const Logo: React.FC = () => {
 
 export default Logo;
 ```
+
 Logo Component Design </br>
 This React component (Logo.tsx) creates a logo using HTML and CSS, styled with Tailwind CSS classes. Here’s a breakdown:
 
 Outer Container (div.flex.justify-center.items-center.h-screen.bg-gray-900):
-  - Centers the content vertically and horizontally (flex justify-center items-center).
-  - Sets a dark gray background (bg-gray-900) covering the entire screen (h-screen).
-  
-Logo Container (div.relative.w-64.h-64):
-  - Positioned relatively (relative).
-  - Dimensions set to 64 pixels for width and height (w-64 h-64).
-  
-Border Design (div.absolute.top-0.left-0 ...):
-  - Positioned absolutely at the top-left corner of its parent container (absolute top-0 left-0).
-  - Draws a rotated border using Tailwind CSS border utilities (border-8, border-transparent, border-t-[#9BCD31], border-r-[#FF4500], border-b-[#A3A3A3], border-l-[#4682B4], transform rotate-45).
-    
-Content (div.absolute.inset-0 ...):
-  - Positioned absolutely to cover its parent container (absolute inset-0).
-  - Uses flexbox (flex flex-col justify-center items-center) to center its contents vertically and horizontally.
-  - Text elements styled with Tailwind CSS classes (text-white, text-2xl, text-sm, font-bold, text-orange-500).
-  - 
-Text Elements:
-  - h1 className="text-2xl font-bold" HTML span className="text-orange-500"&</span> CSS</h1>: Displays a heading with "HTML & CSS" in bold (text-2xl and font-bold), with the ampersand (&) colored orange (text-orange-500).
-  - <p className="text-sm">design and build websites</p>: Displays a paragraph with the text "design and build websites" in smaller text size (text-sm).
 
-## PLEASE find the preview of the logo here " https://logo-react.vercel.app/ " 
+- Centers the content vertically and horizontally (flex justify-center items-center).
+- Sets a dark gray background (bg-gray-900) covering the entire screen (h-screen).
+
+Logo Container (div.relative.w-64.h-64):
+
+- Positioned relatively (relative).
+- Dimensions set to 64 pixels for width and height (w-64 h-64).
+
+Border Design (div.absolute.top-0.left-0 ...):
+
+- Positioned absolutely at the top-left corner of its parent container (absolute top-0 left-0).
+- Draws a rotated border using Tailwind CSS border utilities (border-8, border-transparent, border-t-[#9BCD31], border-r-[#FF4500], border-b-[#A3A3A3], border-l-[#4682B4], transform rotate-45).
+
+Content (div.absolute.inset-0 ...):
+
+- Positioned absolutely to cover its parent container (absolute inset-0).
+- Uses flexbox (flex flex-col justify-center items-center) to center its contents vertically and horizontally.
+- Text elements styled with Tailwind CSS classes (text-white, text-2xl, text-sm, font-bold, text-orange-500).
+- Text Elements:
+- h1 className="text-2xl font-bold" HTML span className="text-orange-500"&</span> CSS</h1>: Displays a heading with "HTML & CSS" in bold (text-2xl and font-bold), with the ampersand (&) colored orange (text-orange-500).
+- <p className="text-sm">design and build websites</p>: Displays a paragraph with the text "design and build websites" in smaller text size (text-sm).
+
+## PLEASE find the preview of the logo here " https://logo-react.vercel.app/ "
 
 # Assignment 2: Finding the Travel Route
 
 Method to find the route traveled by the son
+
 ```bash
 public static List<String> findRoute(String startCity, List<String> citiesVisited, List<String> tickets) {
-````
+```
+
 Build the graph from the list of tickets
+
 ```bash
 Map<String, List<String>> graph = new HashMap<>();
 for (String ticket : tickets) {
@@ -63,53 +74,66 @@ graph.putIfAbsent(fromCity, new ArrayList<>());
 graph.get(fromCity).add(toCity);
 }
 ```
+
 Track visited cities and the current route
-```bash        
+
+```bash
 Set<String> visited = new HashSet<>();
 List<String> route = new ArrayList<>();
-```    
+```
+
 Use depth-first search to find the route
+
 ```bash
 if (dfs(startCity, citiesVisited, graph, visited, route)) {
-return route; 
+return route;
 } else {
-return Collections.emptyList(); 
+return Collections.emptyList();
 }
 }
-```   
+```
 
 Depth-first search method to explore possible routes
+
 ```bash
     private static boolean dfs(String city, List<String> citiesVisited, Map<String, List<String>> graph, Set<String> visited, List<String> route) {
         route.add(city);
         visited.add(city);
- ```       
+```
+
 Base case: Check if all cities visited have been included in the route
+
 ```bash
         if (route.size() == citiesVisited.size()) {
-            return true; 
+            return true;
         }
-``` 
+```
+
 Explore neighbors in the graph
+
 ```bash
         if (graph.containsKey(city)) {
             for (String neighbor : graph.get(city)) {
                 if (!visited.contains(neighbor)) {
                     if (dfs(neighbor, citiesVisited, graph, visited, route)) {
-                        return true; 
+                        return true;
                     }
                 }
             }
         }
 ```
+
 Backtrack: Remove the current city from route and mark as not visited
+
 ```bash
         visited.remove(city);
         route.remove(route.size() - 1);
-        return false; 
+        return false;
     }
 ```
+
 Main method to test the TravelRouteFinder class
+
 ```bash
     public static void main(String[] args) {
         String startCity = "Kiev";
@@ -120,7 +144,9 @@ Main method to test the TravelRouteFinder class
             "Amsterdam-Barcelona", "Berlin-Kiev", "Berlin-Amsterdam"
         );
 ```
+
 Find the route based on input data
+
 ```bash
         List<String> route = findRoute(startCity, citiesVisited, tickets);
         if (!route.isEmpty()) {
@@ -130,11 +156,12 @@ Find the route based on input data
         }
     }
 }
-````
-## OUTPUT OF THE SECOND ASSESMENT - The code is in this file (TravelRouteFinder.java)  
+```
+
+## OUTPUT OF THE SECOND ASSESMENT - The code is in this file (TravelRouteFinder.java)
 
 ```bash
-PS C:\Users\Pawar GP\Desktop\course\excelR\Java> javac TravelRouteFinder.java   
+PS C:\Users\Pawar GP\Desktop\course\excelR\Java> javac TravelRouteFinder.java
 PS C:\Users\Pawar GP\Desktop\course\excelR\Java> java TravelRouteFinder.java
 Route traveled by your son: [Kiev, Prague, Zurich, Amsterdam, Barcelona, Berlin]
 ```
